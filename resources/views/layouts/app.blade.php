@@ -20,9 +20,7 @@
         @include('nav.top')
 
         @guest
-            <div class="col-sm-10 col-md-10 offset-sm-2 offset-md-2 body-content">
-                @yield('content')
-            </div>
+            @yield('content')
         @else
             <div class="container-fluid">
                 <div class="row">
