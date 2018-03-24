@@ -2,11 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Session;
 use App\Calendar;
 use Illuminate\Http\Request;
 
 class CalendarController extends Controller
 {
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +25,8 @@ class CalendarController extends Controller
      */
     public function index()
     {
-        //
+        $sessions = Session::all();
+        return view('calendar', compact('sessions'));
     }
 
     /**

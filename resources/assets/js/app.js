@@ -15,6 +15,11 @@ require('./bootstrap');
 
 Vue.component('sidenav', require('./components/SideNav.vue'));
 
+Vue.component('dashboard', require('./components/Dashboard.vue'));
+Vue.component('calendar', require('./components/Calendar.vue'));
+
+Vue.component('v-select', VueSelect.VueSelect);
+
 const app = new Vue({
     el: '#app'
 });

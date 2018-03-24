@@ -12,3 +12,112 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+
+.body-content {
+	margin-top: 55px;
+	padding: 3rem;
+	min-height: calc(100vh - 55px);
+	height: calc(100% - 55px);
+	box-shadow: -6px 6px 18px -8px rgba(0, 0, 0, 0.6);
+}
+
+.fl { float: left; }
+.fr { float: right; }
+
+.avatar {
+    border: 2px solid rgba(0, 0, 0, 0.04);
+    border-radius: 50%;
+    height: 40px;
+    padding: 2px;
+    width: 40px;
+    height: 50px;
+    width: 50px;
+    margin-right: 5px;
+}
+
+input[type=search] {
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    margin: 20px 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    border-bottom: 1px solid #678fd8;
+    color: #e6e5e5;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=search]:focus {
+    width: 100%;
+    box-shadow: none;
+}
+
+.nav > li > a {
+	padding: 10px 3rem;
+	color: #e6e5e5;
+}
+
+.nav > li > a.active,
+.nav > li > a:hover,
+.nav > li > a:focus {
+	background-color: $sidenav-hover-background;
+	color: $sidenav-hover-color;
+	cursor: pointer;
+	border-left: 5px solid #274F99;
+	padding-left: 2.5rem;
+}
+
+@media (min-width: 768px) {
+	.navbar-nav > li > a {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	padding: 0;
+
+	.sidebar-sticky {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 78px;
+		height: calc(100vh - 55px);
+		overflow-x: hidden;
+		overflow-y: auto;
+		font-size: 16px;
+		background-color: $sidenav-background;
+	}
+
+	.nav {
+		display: block;
+
+		li a.active {
+			border-left: 5px solid #274F99;
+		}
+	}
+}
+
+.modal {
+	.modal-content {
+		.modal-header {
+			background-color: $panel-default-heading-bg;
+			color: $panel-default-heading-color;
+		}
+	}
+}
+
+#calendar .alert-info {
+	background-color: $panel-default-heading-bg;
+	color: $panel-default-heading-color;
+}
+
+#calendar .fc-event {
+	background-color: $input-border-focus;
+}

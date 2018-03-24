@@ -27,9 +27,9 @@
             <div class="container-fluid">
                 <div class="row">
                     @include('nav.side')
-                    <main class="py-4">
+                    <div class="col-sm-10 col-md-10 offset-sm-2 offset-md-2 body-content">
                         @yield('content')
-                    </main>
+                    </div>
                 </div>
             </div>
         @endguest

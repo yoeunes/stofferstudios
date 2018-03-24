@@ -1,8 +1,32 @@
 
 // Body
-$body-bg: #f5f8fa;
+$body-bg: #fff;
+
+// Brands
+$brand-primary: #274F99;
 
 // Typography
 $font-family-sans-serif: "Raleway", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+$text-color: #636b6f;
+
+// Side Nav
+$sidenav-background: #a9a9a9;
+$sidenav-hover-background: #e6e5e5;
+$sidenav-hover-color: #274F99;
+
+// Navbar
+$navbar-default-bg: #274F99;
+
+// Buttons
+$btn-default-color: $text-color;
+
+// Inputs
+$input-border: lighten($text-color, 40%);
+$input-border-focus: lighten($brand-primary, 25%);
+$input-color-placeholder: lighten($text-color, 30%);
+
+// Panels
+$panel-default-heading-bg: #274F99;
+$panel-default-heading-color: #e6e5e5;
