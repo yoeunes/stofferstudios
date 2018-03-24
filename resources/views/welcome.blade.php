@@ -1,5 +1,11 @@
 @extends('layouts.app')
 
+@section('styles')
+    <style>
+        div.container { margin-top: 55px; }
+    </style>
+@endsection
+
 @section('content')
 <div class="container py-4">
     <div class="row justify-content-center">
