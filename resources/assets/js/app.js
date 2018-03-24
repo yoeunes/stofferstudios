@@ -17,6 +17,8 @@ Vue.component('sidenav', require('./components/SideNav.vue'));
 
 Vue.component('dashboard', require('./components/Dashboard.vue'));
 Vue.component('calendar', require('./components/Calendar.vue'));
+Vue.component('leads', require('./components/Leads.vue'));
+Vue.component('clients', require('./components/Clients.vue'));
 
 Vue.component('v-select', VueSelect.VueSelect);
 

@@ -8,3 +8,7 @@
 @section('content')
     <calendar :user="{{ $user }}" :sessions="{{ $sessions }}"></calendar>
 @endsection
+
+@section('scripts')
+	<script src="{{ asset('js/gcal.js') }}"></script>
+@endsection

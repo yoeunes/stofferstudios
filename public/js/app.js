@@ -13810,6 +13810,8 @@ Vue.component('sidenav', __webpack_require__(39));
 
 Vue.component('dashboard', __webpack_require__(48));
 Vue.component('calendar', __webpack_require__(51));
+Vue.component('leads', __webpack_require__(181));
+Vue.component('clients', __webpack_require__(187));
 
 Vue.component('v-select', VueSelect.VueSelect);
 
@@ -47546,7 +47548,7 @@ __webpack_require__(180);
 
 		$('#calendar').fullCalendar({
 			// put your options and callbacks here
-			themeSystem: 'bootstrap3',
+			themeSystem: 'bootstrap4',
 			header: {
 				left: 'today prev,next title',
 				right: 'month,agendaWeek,agendaDay,listWeek'
@@ -47561,13 +47563,19 @@ __webpack_require__(180);
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
 			nowIndicator: true,
-			googleCalendarApiKey: '575888826364-uhpucf0aog8f35s7n7mldqa83itr219r.apps.googleusercontent.com',
+			googleCalendarApiKey: '814348602272-no3mhsqeci1p9r6cntenn3n3hugqom31.apps.googleusercontent.com',
 
-			events: function events(start, end, timezone, callback) {
-				self.$emit('loadSessions', start, end, timezone, callback);
-			},
-			color: 'yellow',
-			textColor: 'black',
+			eventSources: [{
+				googleCalendarId: 'en.usa#holiday@group.v.calendar.google.com'
+			}, {
+				googleCalendarId: 'stofferstudios.com_fh5v0jrtmukft9rs6l642umt6c@group.calendar.google.com'
+			}, {
+				events: function events(start, end, timezone, callback) {
+					self.$emit('loadSessions', start, end, timezone, callback);
+				},
+				color: 'yellow',
+				textColor: 'black'
+			}],
 
 			eventClick: function eventClick(calEvent, jsEvent, view) {
 				alert('Event: ' + calEvent.title);
@@ -47588,7 +47596,6 @@ __webpack_require__(180);
 
 	methods: {
 		loadEvents: function loadEvents(start, end, timezone, callback) {
-			console.log(start, end, timezone, callback);
 			var events = [{
 				title: "This is my first test event.",
 				start: "2018-03-28"
@@ -79273,6 +79280,680 @@ Object.defineProperty(exports, "__esModule", { value: true });
 /***/ })
 /******/ ]);
 });
+
+/***/ }),
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(182)
+/* template */
+var __vue_template__ = __webpack_require__(186)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Leads.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-e7109d20", Component.options)
+  } else {
+    hotAPI.reload("data-v-e7109d20", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 182 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modals_add_lead_vue__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modals_add_lead_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__modals_add_lead_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['user', 'leads'],
+
+    components: { addLead: __WEBPACK_IMPORTED_MODULE_0__modals_add_lead_vue___default.a },
+
+    data: function data() {
+        return {
+            firstName: 'FirstName'
+        };
+    },
+    mounted: function mounted() {
+        this.firstName = this.user.first_name;
+    }
+});
+
+/***/ }),
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(184)
+/* template */
+var __vue_template__ = __webpack_require__(185)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/modals/add-lead.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-55a3104a", Component.options)
+  } else {
+    hotAPI.reload("data-v-55a3104a", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 184 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['user'],
+
+    data: function data() {
+        return {
+            firstName: 'FirstName'
+        };
+    },
+    mounted: function mounted() {
+        this.firstName = this.user.first_name;
+    }
+});
+
+/***/ }),
+/* 185 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "modal fade",
+      attrs: {
+        id: "add-lead-modal",
+        tabindex: "-1",
+        role: "dialog",
+        "aria-labelledby": "add-lead-label"
+      }
+    },
+    [
+      _c("div", { staticClass: "modal-dialog", attrs: { role: "document" } }, [
+        _c("div", { staticClass: "modal-content" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "modal-body" }, [
+            _vm._v(
+              "\n                Hello " +
+                _vm._s(_vm.firstName) +
+                ", Lets add a lead now!\n            "
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      ),
+      _vm._v(" "),
+      _c(
+        "h4",
+        { staticClass: "modal-title", attrs: { id: "add-lead-label" } },
+        [
+          _c("i", {
+            staticClass: "far fa-fw fa-btn fa-address-book",
+            attrs: { "aria-hidden": "true" }
+          }),
+          _vm._v(" Add Lead")
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-default",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", attrs: { type: "button" } },
+        [_vm._v("Save")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-55a3104a", module.exports)
+  }
+}
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "card" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _vm._v(
+            "\n            Hello " +
+              _vm._s(_vm.firstName) +
+              ", Welcome to your Leads. Here we will display a list of your leads and give you the opportunity to create new leads.\n        "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("addLead", { attrs: { user: _vm.user } })
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("i", {
+        staticClass: "far fa-fw fa-btn fa-address-book",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v("\n            Leads\n            "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-link float-right",
+          attrs: { "data-toggle": "modal", "data-target": "#add-lead-modal" }
+        },
+        [_c("i", { staticClass: "far fa-plus-circle" }), _vm._v(" Add Lead")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-e7109d20", module.exports)
+  }
+}
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(188)
+/* template */
+var __vue_template__ = __webpack_require__(192)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Clients.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-37f75e21", Component.options)
+  } else {
+    hotAPI.reload("data-v-37f75e21", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 188 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modals_add_client_vue__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modals_add_client_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__modals_add_client_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['user', 'clients'],
+
+    components: { addClient: __WEBPACK_IMPORTED_MODULE_0__modals_add_client_vue___default.a },
+
+    data: function data() {
+        return {
+            firstName: 'FirstName'
+        };
+    },
+    mounted: function mounted() {
+        this.firstName = this.user.first_name;
+    }
+});
+
+/***/ }),
+/* 189 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(40)
+/* script */
+var __vue_script__ = __webpack_require__(190)
+/* template */
+var __vue_template__ = __webpack_require__(191)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/modals/add-client.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-5d58508e", Component.options)
+  } else {
+    hotAPI.reload("data-v-5d58508e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 190 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['user'],
+
+    data: function data() {
+        return {
+            firstName: 'FirstName'
+        };
+    },
+    mounted: function mounted() {
+        this.firstName = this.user.first_name;
+    }
+});
+
+/***/ }),
+/* 191 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "modal fade",
+      attrs: {
+        id: "add-client-modal",
+        tabindex: "-1",
+        role: "dialog",
+        "aria-labelledby": "add-client-label"
+      }
+    },
+    [
+      _c("div", { staticClass: "modal-dialog", attrs: { role: "document" } }, [
+        _c("div", { staticClass: "modal-content" }, [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("div", { staticClass: "modal-body" }, [
+            _vm._v(
+              "\n                Hello " +
+                _vm._s(_vm.firstName) +
+                ", Lets add a client now!\n            "
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      ),
+      _vm._v(" "),
+      _c(
+        "h4",
+        { staticClass: "modal-title", attrs: { id: "add-client-label" } },
+        [
+          _c("i", {
+            staticClass: "far fa-fw fa-btn fa-users",
+            attrs: { "aria-hidden": "true" }
+          }),
+          _vm._v(" Add Client")
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-default",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Close")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", attrs: { type: "button" } },
+        [_vm._v("Save")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-5d58508e", module.exports)
+  }
+}
+
+/***/ }),
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c("div", { staticClass: "card" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "card-body" }, [
+          _vm._v(
+            "\n            Hello " +
+              _vm._s(_vm.firstName) +
+              ", Welcome to your Clients.\n        "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("addClient", { attrs: { user: _vm.user } })
+    ],
+    1
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card-header" }, [
+      _c("i", {
+        staticClass: "far fa-fw fa-btn fa-users",
+        attrs: { "aria-hidden": "true" }
+      }),
+      _vm._v("\n            Clients\n            "),
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-link float-right",
+          attrs: { "data-toggle": "modal", "data-target": "#add-client-modal" }
+        },
+        [_c("i", { staticClass: "far fa-plus-circle" }), _vm._v(" Add Client")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-37f75e21", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

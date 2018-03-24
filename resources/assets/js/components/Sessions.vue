@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="card">
-            <div class="card-heading">
+            <div class="card-header">
                 <i class="fas fa-fw fa-btn fa-camera-retro" aria-hidden="true"></i>
                 Sessions
-                <button class="btn btn-link pull-right" data-toggle="modal" data-target="#add-session-modal">
+                <button class="btn btn-link float-right" data-toggle="modal" data-target="#add-session-modal">
                     <i class="far fa-plus-circle"></i> Add Session
                 </button>
             </div>

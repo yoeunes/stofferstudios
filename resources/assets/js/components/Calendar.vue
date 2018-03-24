@@ -26,7 +26,7 @@
 
 			$('#calendar').fullCalendar({
 				// put your options and callbacks here
-				themeSystem: 'bootstrap3',
+				themeSystem: 'bootstrap4',
 				header: {
                         left: 'today prev,next title',
                         right: 'month,agendaWeek,agendaDay,listWeek'
@@ -41,13 +41,23 @@
                 editable: true,
                 eventLimit: true, // allow "more" link when too many events
                 nowIndicator: true,
-                googleCalendarApiKey: '575888826364-uhpucf0aog8f35s7n7mldqa83itr219r.apps.googleusercontent.com',
+                googleCalendarApiKey: '814348602272-no3mhsqeci1p9r6cntenn3n3hugqom31.apps.googleusercontent.com',
 
-				events: function(start, end, timezone, callback) {
-					self.$emit('loadSessions', start, end, timezone, callback);
-				},
-				color: 'yellow',
-				textColor: 'black',
+                eventSources: [
+					{
+						googleCalendarId: 'en.usa#holiday@group.v.calendar.google.com'
+					},
+					{
+						googleCalendarId: 'stofferstudios.com_fh5v0jrtmukft9rs6l642umt6c@group.calendar.google.com'
+					},
+                	{
+						events: function(start, end, timezone, callback) {
+							self.$emit('loadSessions', start, end, timezone, callback);
+						},
+						color: 'yellow',
+						textColor: 'black',
+                	},
+                ],
 
 				eventClick: function(calEvent, jsEvent, view) {
 					alert('Event: ' + calEvent.title);
@@ -67,7 +77,6 @@
 
 		methods: {
 			loadEvents(start, end, timezone, callback) {
-				console.log(start, end, timezone, callback);
 				var events = [
 					{
 						title: "This is my first test event.",

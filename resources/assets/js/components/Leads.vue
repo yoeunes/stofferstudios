@@ -1,10 +1,10 @@
 <template>
     <div>
         <div class="card">
-            <div class="card-heading">
+            <div class="card-header">
                 <i class="far fa-fw fa-btn fa-address-book" aria-hidden="true"></i>
                 Leads
-                <button class="btn btn-link pull-right" data-toggle="modal" data-target="#add-lead-modal"><i class="far fa-plus-circle"></i> Add Lead</button>
+                <button class="btn btn-link float-right" data-toggle="modal" data-target="#add-lead-modal"><i class="far fa-plus-circle"></i> Add Lead</button>
             </div>
 
             <div class="card-body">

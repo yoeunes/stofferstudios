@@ -19,3 +19,5 @@ Auth::routes();
 
 Route::resource('dashboard', 'DashboardController');
 Route::resource('calendar', 'CalendarController');
+Route::resource('leads', 'LeadController');
+Route::resource('clients', 'ClientController');
