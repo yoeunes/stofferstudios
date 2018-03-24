@@ -2,7 +2,7 @@
 
 @section('styles')
     <style>
-        div.container { margin-top: 55px; }
+        div.container.py-4 { margin-top: 55px; }
     </style>
 @endsection
 
