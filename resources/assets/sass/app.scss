@@ -14,11 +14,16 @@
 }
 
 .body-content {
-	margin-top: 55px;
+	margin-top: 78px;
 	padding: 3rem;
-	min-height: calc(100vh - 55px);
-	height: calc(100% - 55px);
+	min-height: calc(100vh - 78px);
+	height: calc(100% - 78px);
 	box-shadow: -6px 6px 18px -8px rgba(0, 0, 0, 0.6);
+}
+
+.card-header {
+	background-color: $panel-default-heading-bg;
+	color: $panel-default-heading-color;
 }
 
 .fl { float: left; }
@@ -88,7 +93,7 @@ input[type=search]:focus {
 		position: -webkit-sticky;
 		position: sticky;
 		top: 78px;
-		height: calc(100vh - 55px);
+		height: calc(100vh - 78px);
 		overflow-x: hidden;
 		overflow-y: auto;
 		font-size: 16px;

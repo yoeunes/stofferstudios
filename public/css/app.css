@@ -10001,12 +10001,17 @@ a.text-dark:focus {
 }
 
 .body-content {
-  margin-top: 55px;
+  margin-top: 78px;
   padding: 3rem;
-  min-height: calc(100vh - 55px);
-  height: calc(100% - 55px);
+  min-height: calc(100vh - 78px);
+  height: calc(100% - 78px);
   -webkit-box-shadow: -6px 6px 18px -8px rgba(0, 0, 0, 0.6);
           box-shadow: -6px 6px 18px -8px rgba(0, 0, 0, 0.6);
+}
+
+.card-header {
+  background-color: #274F99;
+  color: #e6e5e5;
 }
 
 .fl {
@@ -10084,7 +10089,7 @@ input[type=search]:focus {
   position: -webkit-sticky;
   position: sticky;
   top: 78px;
-  height: calc(100vh - 55px);
+  height: calc(100vh - 78px);
   overflow-x: hidden;
   overflow-y: auto;
   font-size: 16px;
